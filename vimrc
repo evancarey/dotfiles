@@ -60,6 +60,7 @@ endfunction
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
 
 colorscheme monokai
+set background=dark
 
 set colorcolumn=80
 highlight ColorColumn guibg=#004000
@@ -85,10 +86,12 @@ syntax on
 "autocmd VimEnter * wincmd p
 "
 function OpenNERDTree()
-    execute ":NERDTree"
+        execute ":NERDTree"
 endfunction
 command -nargs=0 OpenNERDTree :call OpenNERDTree()
 nmap <ESC>t :OpenNERDTree<CR>
 
 let g:indent_guides_enable_on_vim_startup = 1
 let g:airline#extensions#tabline#enabled = 1
+
+let NERDTreeIgnore=[ '\.DS_Store$' ]
